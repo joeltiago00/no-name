@@ -3,8 +3,6 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Repositories\User\UserEloquentRepository;
-use Repositories\User\UserRepository;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -21,6 +19,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        app()->bind(UserRepository::class, fn() => new UserEloquentRepository());
+        foreach (config('interface') as $interface => $concrete) {
+            app()->bind($interface, fn() => app($concrete));
+        }
     }
 }
