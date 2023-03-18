@@ -1,0 +1,11 @@
+{
+    "data": {
+        "id": 1,
+        "first_name": "John",
+        "last_name": "Week",
+        "email": "john@week.com",
+        "gender": "m",
+        "birth_date": "1997-01-28 00:00:00",
+        "token": "5|MIWOec4V5F07kB3iRJWTRMLnPntY1ZqB4O9Yxl5a"
+    }
+}

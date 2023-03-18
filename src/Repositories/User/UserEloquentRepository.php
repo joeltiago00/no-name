@@ -11,4 +11,9 @@ class UserEloquentRepository extends Repository implements UserRepository
     {
         $this->model = new User();
     }
+
+    public function deleteTokensByUser(User $user): void
+    {
+        $user->tokens()->delete();
+    }
 }

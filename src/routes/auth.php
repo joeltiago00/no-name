@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\User\UserStoreController;
-use Illuminate\Http\Request;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\LogoutController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,9 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::prefix('user')
-    ->name('user.')
+Route::prefix('auth')
+    ->name('auth.')
     ->group(function () {
-        Route::post('', UserStoreController::class)->name('store');
+        Route::post('', LoginController::class)->name('login');
+        Route::middleware('auth:sanctum')
+            ->get('', LogoutController::class)->name('logout');
     });
 
