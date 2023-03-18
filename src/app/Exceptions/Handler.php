@@ -45,4 +45,16 @@ class Handler extends ExceptionHandler
             //
         });
     }
+
+    public function render($request, Throwable $e)
+    {
+        if (!env('APP_DEBUG')) {
+            if ($e instanceof ValidationException)
+                return response()->json(['errors' => $e->errors()], 422);
+
+            return response()->json(['errors' => $e->getMessage(), 'trace' => $e->getTrace()], 422);
+        }
+
+        return parent::render($request, $e);
+    }
 }
