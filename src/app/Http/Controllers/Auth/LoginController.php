@@ -16,6 +16,12 @@ class LoginController extends Controller
     }
 
     /**
+     * Login
+     *
+     * Make user login
+     * @responseFile ApiResponses/Auth/login.json
+     * @group Auth
+     *
      * @throws InvalidCredentialsException
      */
     public function __invoke(LoginRequest $request): LoginResource
