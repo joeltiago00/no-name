@@ -6,9 +6,9 @@ use App\Enums\PaginateEnum;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Repositories\User\UserRepository;
 
-class UserList
+readonly class UserList
 {
-    public function __construct(private readonly UserRepository $userRepository)
+    public function __construct(private UserRepository $userRepository)
     {
     }
 
