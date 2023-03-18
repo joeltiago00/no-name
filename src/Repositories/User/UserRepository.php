@@ -9,5 +9,5 @@ interface UserRepository
 {
     public function deleteTokensByUser(User $user): void;
 
-    public function list(int $page, int $perPage): LengthAwarePaginator;
+    public function list(int $page, int $perPage, ?string $search = null): LengthAwarePaginator;
 }

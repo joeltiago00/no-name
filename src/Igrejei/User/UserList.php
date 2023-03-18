@@ -16,7 +16,8 @@ class UserList
     {
         return $this->userRepository->list(
             $data['page'] ?? PaginateEnum::PAGE->default(),
-            $data['per_page'] ?? PaginateEnum::PER_PAGE->default()
+            $data['per_page'] ?? PaginateEnum::PER_PAGE->default(),
+            $data['search']
         );
     }
 }
