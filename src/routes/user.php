@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\User\UserStoreController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
