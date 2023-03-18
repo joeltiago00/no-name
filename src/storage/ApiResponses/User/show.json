@@ -1,0 +1,10 @@
+{
+    "data": {
+        "first_name": "Joel",
+        "last_name": "Tiago",
+        "email": "joel@tiago.com",
+        "birth_date": "1997-01-28 00:00:00",
+        "gender": "m",
+        "is_active": 1
+    }
+}
