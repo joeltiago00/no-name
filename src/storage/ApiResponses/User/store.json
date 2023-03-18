@@ -1,0 +1,10 @@
+{
+    "data": {
+        "first_name": "John",
+        "last_name": "Week",
+        "email": "john@week.com",
+        "birth_date": "1997-01-28",
+        "gender": "m",
+        "is_active": true
+    }
+}
