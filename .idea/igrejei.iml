@@ -116,6 +116,10 @@
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/dflydev/dot-access-data" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/vlucas/phpdotenv" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/spatie/laravel-ignition" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/league/flysystem-aws-s3-v3" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/mtdowling/jmespath.php" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/aws/aws-sdk-php" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/aws/aws-crt-php" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
