@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Post\PostStoreRequest;
 use App\Http\Resources\Post\PostResource;
 use Igrejei\Post\StorePost;
+use Illuminate\Http\JsonResponse;
+use Symfony\Component\HttpFoundation\Response;
 
 class PostStoreController extends Controller
 {
@@ -17,11 +19,14 @@ class PostStoreController extends Controller
      * Store Post
      *
      * Make new user post
-     * @responseFile ApiResponses/Post/post.json
+     * @responseFile  ApiResponses/Post/post.json
+     * @response
      * @group Post
      */
-    public function __invoke(PostStoreRequest $request, int $userId): PostResource
+    public function __invoke(PostStoreRequest $request, int $userId): JsonResponse
     {
-        return PostResource::make($this->action->handle($userId, $request->validated()));
+        return PostResource::make($this->action->handle($userId, $request->validated()))
+            ->response()
+            ->setStatusCode(Response::HTTP_NO_CONTENT);
     }
 }
