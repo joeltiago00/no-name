@@ -19,8 +19,7 @@ class PostStoreController extends Controller
      * Store Post
      *
      * Make new user post
-     * @responseFile  ApiResponses/Post/post.json
-     * @response
+     * @responseFile 201 ApiResponses/Post/post.json
      * @group Post
      */
     public function __invoke(PostStoreRequest $request, int $userId): JsonResponse
