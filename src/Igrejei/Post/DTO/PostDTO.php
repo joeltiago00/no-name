@@ -1,6 +1,6 @@
 <?php
 
-namespace Igrejei\Post;
+namespace Igrejei\Post\DTO;
 
 use Igrejei\DTO;
 

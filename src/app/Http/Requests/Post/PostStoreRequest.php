@@ -29,7 +29,7 @@ class PostStoreRequest extends FormRequest
             ],
             'files' => [
                 'description' => 'Files of post in base64 encode.',
-                'example' => 'c2RhYXNkZmFzZGZhc2RmYXNkZmFzZGZhc2RmYXNkZnNkZnNkZnNkZmFzZGZhc2RmYXNm'
+                'example' => 'data:image/png;base64,c2RhYXNkZmFzZGZhc2RmYXNkZmFzZGZhc2RmYXNkZnNkZnNkZnNkZmFzZGZhc2RmYXNm'
             ]
         ];
     }

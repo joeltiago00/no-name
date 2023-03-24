@@ -1,13 +1,12 @@
 <?php
 
-namespace Igrejei\Post;
+namespace Igrejei\Post\DTO;
 
 use Igrejei\DTO;
 
 class PostFileDTO extends DTO
 {
     public function __construct(
-//        public readonly int $postId,
         public readonly string $link
     )
     {

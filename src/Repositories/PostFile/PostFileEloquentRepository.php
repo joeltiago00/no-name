@@ -4,7 +4,7 @@ namespace Repositories\PostFile;
 
 use App\Models\Post;
 use App\Models\PostFile;
-use Igrejei\Post\PostFileDTO;
+use Igrejei\Post\DTO\PostFileDTO;
 use Illuminate\Database\Eloquent\Model;
 use Repositories\Repository;
 

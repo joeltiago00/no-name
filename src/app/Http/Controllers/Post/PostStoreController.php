@@ -13,6 +13,13 @@ class PostStoreController extends Controller
     {
     }
 
+    /**
+     * Store Post
+     *
+     * Make new user post
+     * @responseFile ApiResponses/Post/post.json
+     * @group Post
+     */
     public function __invoke(PostStoreRequest $request, int $userId): PostResource
     {
         return PostResource::make($this->action->handle($userId, $request->validated()));
