@@ -4,7 +4,6 @@ namespace Igrejei\Integrations\AWS\S3\DTO;
 
 class S3FileDTO
 {
-    private string $bucket;
     private string $acl = 'public-read';
 
     public function __construct(
