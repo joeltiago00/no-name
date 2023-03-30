@@ -20,4 +20,12 @@ class PostEloquentRepository extends Repository implements PostRepository
         return $user->post()
             ->create($dto->toArray());
     }
+
+    public function existById(int $postId): bool
+    {
+        return $this->model
+            ->newQuery()
+            ->where('id', $postId)
+            ->exists();
+    }
 }
