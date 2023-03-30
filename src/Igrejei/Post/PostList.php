@@ -18,13 +18,13 @@ readonly class PostList
         $posts = $this->postRepository
             ->list(
                 $data['page'] ?? PaginateEnum::PAGE->default(),
-                $data['per_page'] ??PaginateEnum::PER_PAGE->default(),
+                $data['per_page'] ?? PaginateEnum::PER_PAGE->default(),
                 $data
             );
 
         $posts->each(function (Post $post) {
-           $post->usersLiked = $post->usersLiked()->get();
-           $post->likesCount = $post->likes()->count();
+            $post->usersLiked = $post->usersLiked()->get();
+            $post->likesCount = $post->likes()->count();
 
         });
 
