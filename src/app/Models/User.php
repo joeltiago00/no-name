@@ -51,4 +51,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(PostLike::class);
     }
+
+    public function emailConfirmations(): HasMany
+    {
+        return $this->hasMany(EmailConfirmation::class);
+    }
 }
