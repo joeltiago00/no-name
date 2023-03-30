@@ -15,7 +15,6 @@ class PostFileEloquentRepository extends Repository implements PostFileRepositor
         $this->model = new PostFile();
     }
 
-
     public function createByPost(Post $post, PostFileDTO $dto): Model
     {
         return $post->files()
