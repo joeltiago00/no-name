@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Post\PostListController;
+use App\Http\Controllers\Post\PostShowController;
+use App\Http\Controllers\Post\PostLikeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,7 +19,10 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('post')->name('post.')->group(function () {
     Route::middleware('auth:sanctum')->group(function () {
         Route::prefix('{postId}')->group(function () {
-            Route::get('', App\Http\Controllers\Post\PostLikeController::class);
+            Route::get('like-or-unlike', PostLikeController::class);
+            Route::get('', PostShowController::class);
         });
+
+        Route::get('', PostListController::class);
     });
 });
