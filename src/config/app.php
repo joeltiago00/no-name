@@ -212,4 +212,9 @@ return [
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 
+    /*
+     * Time to live email confirmation code
+     */
+    'ttl_email_confirmation' => env('TTL_EMAIL_CONFIRMATION', 10)
+
 ];

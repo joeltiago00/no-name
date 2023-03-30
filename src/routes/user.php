@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Post\PostStoreController;
+use App\Http\Controllers\User\Email\SendEmailConfirmationController;
 use App\Http\Controllers\User\UserListController;
 use App\Http\Controllers\User\UserShowController;
 use App\Http\Controllers\User\UserStoreController;
@@ -26,6 +27,10 @@ Route::prefix('user')->name('user.')->group(function () {
 
             Route::prefix('post')->group(function () {
                 Route::post('', PostStoreController::class);
+            });
+
+            Route::prefix('email')->group(function () {
+                Route::get('send-confirmation', SendEmailConfirmationController::class);
             });
         });
 
