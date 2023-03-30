@@ -15,9 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('post')->name('post.')->group(function () {
     Route::middleware('auth:sanctum')->group(function () {
-        Route::prefix('{userId}')->group(function () {
-//            Route::post('', PostStoreController::class);
+        Route::prefix('{postId}')->group(function () {
+            Route::get('', App\Http\Controllers\Post\PostLikeController::class);
         });
     });
 });
-

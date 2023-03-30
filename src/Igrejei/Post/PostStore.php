@@ -17,7 +17,7 @@ use Repositories\Post\PostRepository;
 use Repositories\PostFile\PostFileRepository;
 use Repositories\User\UserRepository;
 
-readonly class StorePost
+readonly class PostStore
 {
     public function __construct(
         private UserRepository     $userRepository,
