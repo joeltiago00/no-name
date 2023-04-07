@@ -3,6 +3,7 @@
 namespace Repositories\User;
 
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Repositories\Repository;
@@ -30,5 +31,10 @@ class UserEloquentRepository extends Repository implements UserRepository
                     ->orWhere('birth_date', 'like', "%$search%");
             })
             ->paginate(perPage: $perPage, page: $page);
+    }
+
+    public function confirmEmail(User $user): bool
+    {
+        return $user->update(['email_verified_at' => Carbon::now()]);
     }
 }
