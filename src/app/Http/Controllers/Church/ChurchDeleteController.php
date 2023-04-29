@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Church;
 
 use App\Http\Controllers\Controller;
-use Igrejei\Church\ChurchDelete;
-use Igrejei\Church\Exceptions\ChurchNotDeletedException;
 use Illuminate\Http\Response;
+use NoName\Church\ChurchDelete;
+use Noname\Church\Exceptions\ChurchNotDeletedException;
 
 class ChurchDeleteController extends Controller
 {

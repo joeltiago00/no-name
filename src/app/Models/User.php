@@ -5,11 +5,15 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model as ModelEloquent;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Hash;
 use Laravel\Sanctum\HasApiTokens;
+use NoName\ModelHistory\HistoryDelete;
+use NoName\ModelHistory\HistoryUpdate;
+use Repositories\History\HistoryRepository;
 
 class User extends Authenticatable
 {
@@ -58,5 +62,26 @@ class User extends Authenticatable
     public function emailConfirmations(): HasMany
     {
         return $this->hasMany(EmailConfirmation::class);
+    }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        $loggedUser = auth()?->user()->getKey();
+
+        static::updating(
+            function (ModelEloquent $model) use ($loggedUser) {
+                (new HistoryUpdate(app(HistoryRepository::class)))
+                ->handle($model, $loggedUser);
+            }
+        );
+
+        static::deleting(
+            function (ModelEloquent $model) use ($loggedUser) {
+                (new HistoryDelete(app(HistoryRepository::class)))
+                ->handle($model, $loggedUser);
+            }
+        );
     }
 }

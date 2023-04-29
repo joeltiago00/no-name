@@ -7,4 +7,5 @@ return [
     \Repositories\PostLike\PostLikeRepository::class => \Repositories\PostLike\PostLikeEloquentRepository::class,
     \Repositories\EmailConfirmation\EmailConfirmationRepository::class => \Repositories\EmailConfirmation\EmailConfirmationEloquentRepository::class,
     \Repositories\Church\ChurchRepository::class => \Repositories\Church\ChurchEloquentRepository::class,
+    \Repositories\History\HistoryRepository::class => \Repositories\History\HistoryEloquentRepository::class,
 ];

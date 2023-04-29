@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Church;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Church\ChurchUpdateRequest;
-use Igrejei\Church\Exceptions\ChurchNotUpdatedException;
 use Illuminate\Http\Response;
 use NoName\Church\ChurchUpdate;
+use NoName\Church\Exceptions\ChurchNotUpdatedException;
 
 class ChurchUpdateController extends Controller
 {
