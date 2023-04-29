@@ -4,8 +4,8 @@ namespace Repositories\PostFile;
 
 use App\Models\Post;
 use App\Models\PostFile;
-use Igrejei\Post\DTO\PostFileDTO;
 use Illuminate\Database\Eloquent\Model;
+use NoName\Post\DTO\PostFileDTO;
 use Repositories\Repository;
 
 class PostFileEloquentRepository extends Repository implements PostFileRepository

@@ -4,8 +4,8 @@ namespace Repositories\EmailConfirmation;
 
 use App\Models\EmailConfirmation;
 use App\Models\User;
-use Igrejei\User\DTO\SendEmailConfirmationDTO;
 use Illuminate\Support\Carbon;
+use NoName\User\DTO\SendEmailConfirmationDTO;
 use Repositories\Repository;
 
 class EmailConfirmationEloquentRepository extends Repository implements EmailConfirmationRepository

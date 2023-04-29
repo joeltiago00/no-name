@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Resources\Auth\LoginResource;
-use Igrejei\Auth\Exceptions\InvalidCredentialsException;
-use Igrejei\Auth\Login;
+use NoName\Auth\Exceptions\InvalidCredentialsException;
+use NoName\Auth\Login;
 
 class LoginController extends Controller
 {
@@ -18,8 +18,9 @@ class LoginController extends Controller
      * Login
      *
      * Make user login
+     *
      * @responseFile ApiResponses/Auth/login.json
-     * @group Auth
+     * @group        Auth
      *
      * @throws InvalidCredentialsException
      */

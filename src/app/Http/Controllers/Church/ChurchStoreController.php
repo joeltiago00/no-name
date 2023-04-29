@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Church;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Church\ChurchStoreRequest;
 use App\Http\Resources\Church\ChurchResource;
-use Igrejei\Church\ChurchStore;
 use Illuminate\Http\JsonResponse;
+use NoName\Church\ChurchStore;
 use Symfony\Component\HttpFoundation\Response;
 
 class ChurchStoreController extends Controller

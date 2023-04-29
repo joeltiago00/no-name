@@ -5,8 +5,8 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\User\UserStoreRequest;
 use App\Http\Resources\User\UserResource;
-use Igrejei\User\UserStore;
 use Illuminate\Http\JsonResponse;
+use NoName\User\UserStore;
 use Symfony\Component\HttpFoundation\Response;
 
 class UserStoreController extends Controller

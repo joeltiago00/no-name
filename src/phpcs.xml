@@ -5,7 +5,7 @@
 
     <file>app/Http</file>
     <file>app/Models</file>
-    <file>Igrejei</file>
+    <file>NoName</file>
     <file>Repositories</file>
     <file>tests</file>
 
@@ -31,7 +31,7 @@
         <properties>
             <property name="rootNamespaces" type="array">
                 <element key="app" value="App"/>
-                <element key="Igrejei" value="Igrejei"/>
+                <element key="NoName" value="Igrejei"/>
                 <element key="Repositories" value="Repositories"/>
                 <element key="tests" value="Tests"/>
             </property>

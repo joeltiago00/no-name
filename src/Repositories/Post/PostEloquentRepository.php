@@ -4,9 +4,9 @@ namespace Repositories\Post;
 
 use App\Models\Post;
 use App\Models\User;
-use Igrejei\Post\DTO\PostDTO;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pagination\LengthAwarePaginator;
+use NoName\Post\DTO\PostDTO;
 use Repositories\Repository;
 
 class PostEloquentRepository extends Repository implements PostRepository

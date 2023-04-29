@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Post;
 
 use App\Http\Controllers\Controller;
-use Igrejei\Post\Exceptions\PostNotExistException;
-use Igrejei\Post\PostLike;
 use Illuminate\Http\Response;
+use NoName\Post\Exceptions\PostNotExistException;
+use NoName\Post\PostLike;
 
 class PostLikeController extends Controller
 {
@@ -17,7 +17,8 @@ class PostLikeController extends Controller
      * Like/Unlike Post
      *
      * Like/Unlike user post
-     * @group Post
+     *
+     * @group  Post
      * @throws PostNotExistException
      */
     public function __invoke(int $postId): Response

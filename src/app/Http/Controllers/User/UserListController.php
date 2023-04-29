@@ -5,8 +5,8 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\User\UserListRequest;
 use App\Http\Resources\User\UserResource;
-use Igrejei\User\UserList;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
+use NoName\User\UserList;
 
 class UserListController extends Controller
 {
@@ -20,7 +20,7 @@ class UserListController extends Controller
      * List of all users paginated
      *
      * @responseFile ApiResponses/User/list.json
-     * @group User
+     * @group        User
      */
     public function __invoke(UserListRequest $request): AnonymousResourceCollection
     {

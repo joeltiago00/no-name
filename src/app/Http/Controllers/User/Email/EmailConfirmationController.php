@@ -4,8 +4,8 @@ namespace App\Http\Controllers\User\Email;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\User\Email\EmailConfirmationRequest;
-use Igrejei\User\Email\EmailConfirmation;
 use Illuminate\Http\Response;
+use NoName\User\Email\EmailConfirmation;
 
 class EmailConfirmationController extends Controller
 {

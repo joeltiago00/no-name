@@ -3,8 +3,8 @@
 namespace Repositories\Church;
 
 use App\Models\Church;
-use Igrejei\Church\DTO\ChurchDTO;
 use Illuminate\Pagination\LengthAwarePaginator;
+use NoName\Church\DTO\ChurchDTO;
 
 interface ChurchRepository
 {

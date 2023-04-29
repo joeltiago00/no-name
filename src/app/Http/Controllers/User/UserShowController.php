@@ -4,7 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\User\UserResource;
-use Igrejei\User\UserShow;
+use NoName\User\UserShow;
 
 class UserShowController extends Controller
 {
@@ -18,7 +18,7 @@ class UserShowController extends Controller
      * Show user info
      *
      * @responseFile ApiResponses/User/show.json
-     * @group User
+     * @group        User
      */
     public function __invoke(int $userId): UserResource
     {

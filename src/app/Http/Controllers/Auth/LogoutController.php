@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Igrejei\Auth\Logout;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use NoName\Auth\Logout;
 
 class LogoutController extends Controller
 {
@@ -17,8 +17,9 @@ class LogoutController extends Controller
      * Logout
      *
      * Make user logout
+     *
      * @responseFile ApiResponses/Auth/logout.json
-     * @group Auth
+     * @group        Auth
      */
     public function __invoke(Request $request): Response
     {

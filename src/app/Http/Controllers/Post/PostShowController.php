@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Post;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Post\PostResource;
-use Igrejei\Post\PostShow;
+use NoName\Post\PostShow;
 
 class PostShowController extends Controller
 {

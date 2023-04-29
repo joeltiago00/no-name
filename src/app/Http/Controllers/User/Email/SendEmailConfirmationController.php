@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\User\Email;
 
 use App\Http\Controllers\Controller;
-use Igrejei\User\Email\SendEmailConfirmation;
 use Illuminate\Http\Response;
+use NoName\User\Email\SendEmailConfirmation;
 
 class SendEmailConfirmationController extends Controller
 {
