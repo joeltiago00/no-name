@@ -8,7 +8,7 @@ parameters:
         - Igrejei
 
     # The level 8 is the highest level
-    level: 8
+    level: 5
 
     ignoreErrors:
         - "#Called 'modelKeys' on Laravel collection, but could have been retrieved as a query.#"

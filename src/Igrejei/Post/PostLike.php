@@ -6,13 +6,12 @@ use Igrejei\Post\Exceptions\PostNotExistException;
 use Repositories\Post\PostRepository;
 use Repositories\PostLike\PostLikeRepository;
 
-readonly class PostLike
+class PostLike
 {
     public function __construct(
         private PostLikeRepository $postLikeRepository,
         private PostRepository $postRepository
-    )
-    {
+    ) {
     }
 
     /**
