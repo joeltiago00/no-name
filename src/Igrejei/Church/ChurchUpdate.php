@@ -20,7 +20,6 @@ readonly class ChurchUpdate
         $church = $this->churchRepository
             ->findById($churchId);
 
-        //TODO:: insert column user_update_id in churches
         if (!$this->churchRepository->updateByChurch($church, ChurchDTO::makeFromArray($data))) {
             throw new ChurchNotUpdatedException();
         }
