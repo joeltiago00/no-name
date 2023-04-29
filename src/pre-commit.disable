@@ -1,0 +1,114 @@
+#!/bin/bash
+
+##################################################
+# Script para validação de qualidade de código
+# utilizando as seguintes ferramentas:
+# - phpcs && phpcbf
+# - phpmd
+# - phpstan && larastan
+##################################################
+
+echo -e "\033[1;33m"Iniciando Script de Pré Commit..."\033[0m"
+
+#------------------------
+# Verificando se há arquivos em staging pra serem commitados.A
+# Pastas retiradas do phpcs.xml onde configuramos em quais lugares deverão ser rodados as validações
+#------------------------
+FOLDERS_TO_PERSIST=("app/Exceptions" "app/Http" "app/Models" "Igrejei" "tests" "Repositories")
+STAGED_FILES_CMD=$(git diff --cached --name-only --diff-filter=ACMR | grep \.php | grep -v \.blade\.php)
+#------------------------
+# Listando arquivos em staging para pré-commit.
+#------------------------
+echo -e "\033[1;33m=========================================\033[0m"
+echo -e "\033[1;33m=  Lista de arquivos à serem revisados  =\033[0m"
+echo -e "\033[1;33m= Verde -> OK | Azul -> Não considerado =  "
+echo -e "\033[1;33m=========================================\033[0m"
+for FILE in $STAGED_FILES_CMD; do
+    LISTED='0'
+    for FOLDER in "${FOLDERS_TO_PERSIST[@]}"; do
+        if [[ "$FILE" =~ $FOLDER ]]; then
+            echo -e "\033[1;32m"-\> $FILE"\033[0m"
+            FILES="$FILES $FILE"
+            LISTED='1'
+            break;
+        fi
+    done
+
+    if [[ $LISTED -eq '0' ]]; then
+        IGNORED_FILES="$IGNORED_FILES $FILE"
+        echo -e "\033[1;36m"-\> $FILE"\033[0m"
+    fi
+done
+echo -e "\033[1;33m=======================================\033[0m"
+
+if [ "$STAGED_FILES_CMD" == "" ]; then
+    echo $STAGED_FILES_CMD
+    echo -e "\033[1;31m"Nenhum arquivo encontrado. Utilize o comando git add . ou adicione os arquivos manualmente e tente novamente! "\033[0m"
+    exit 1
+fi
+
+if [[ "$FILES" == "" && "$IGNORED_FILES" != "" ]]; then
+    echo -e "\033[1;32m"Foram encontrados apenas arquivos que não serão verificados. Liberando commit..."\033[0m"
+    exit 0
+fi
+
+#------------------------
+# Listando arquivos para PHPMD
+#------------------------
+for FILE in $FILES; do
+    MDFILES="$MDFILES,$FILE"
+done
+
+#------------------------
+# Listando arquivos para PHPUnit
+#------------------------
+for FILE in $FILES; do
+    if [[ "$FILE" =~ Test\.php ]]
+    then
+        TESTFILES="$TESTFILES $FILE"
+    fi
+done
+
+#------------------------
+# PHPCS e PHPCBF
+#------------------------
+if [ "$FILES" != "" ]; then
+    echo -e "\033[1;33m"Rodando o PHP CodeSniffer..."\033[0m"
+    src/vendor/bin/phpcs --standard=src/phpcs.xml $FILES
+
+    if [ $? != 0 ]; then
+        # Permite o usuário digitar uma nova entrada no teclado (STDIN)
+        exec </dev/tty
+        read -p "Foram encontradas violações nos Padrões de Código do projeto. Você deseja arrumar automaticamente o que for possível? (Y)" choice
+        [ "$choice" = "" ] && choice='Y'
+
+        case ${choice:0:1} in
+        y | Y)
+            echo -e "\033[1;33m"Rodando o PHP CodeBeautifier..."\033[0m"
+            src/vendor/bin/phpcbf $FILES
+            echo -e "\033[0;32m"Feito! Verifique se há erros que não podem ser ajustados automaticamente e adicione as novas alterações aos arquivos à serem commitados."\033[0m"
+
+            exit 1
+            ;;
+        *)
+            echo -e "\033[41m"Por favor, arrume os Padrões de códigos violados antes de commitar."\033[0m"
+            exit 1
+            ;;
+        esac
+    fi
+fi
+
+#------------------------
+# PHP Mess Detector
+#------------------------
+if [ "$MDFILES" != "" ]; then
+    IGNORAR='*RouteServiceProvider*,*/Kernel*,*Enum.php'
+    echo -e "\033[1;33m"Rodando o PHP Mess Detector..."\033[0m"
+    src/vendor/bin/phpmd ${MDFILES:1} text src/phpmd.xml --exclude "$IGNORAR"
+    if [ $? -ne 0 ]; then
+        exit 1
+    fi
+fi
+
+echo -e "\033[1;32m"Script finalizado!!"\033[0m"
+exit 0
