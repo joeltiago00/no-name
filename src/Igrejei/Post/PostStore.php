@@ -20,11 +20,10 @@ use Repositories\User\UserRepository;
 readonly class PostStore
 {
     public function __construct(
-        private UserRepository     $userRepository,
-        private PostRepository     $postRepository,
+        private UserRepository $userRepository,
+        private PostRepository $postRepository,
         private PostFileRepository $postFileRepository
-    )
-    {
+    ) {
     }
 
     public function handle(int $userId, array $data): Post

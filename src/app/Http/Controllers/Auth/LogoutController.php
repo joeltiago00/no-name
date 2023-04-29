@@ -9,7 +9,8 @@ use Illuminate\Http\Response;
 
 class LogoutController extends Controller
 {
-    public function __construct(private readonly Logout $action)    {
+    public function __construct(private readonly Logout $action)
+    {
     }
 
     /**

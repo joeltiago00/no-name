@@ -14,10 +14,9 @@ use Repositories\User\UserRepository;
 readonly class SendEmailConfirmation
 {
     public function __construct(
-        private UserRepository              $userRepository,
+        private UserRepository $userRepository,
         private EmailConfirmationRepository $emailConfirmationRepository
-    )
-    {
+    ) {
     }
 
     public function handle(int $userId): void

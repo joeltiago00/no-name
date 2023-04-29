@@ -1,0 +1,26 @@
+includes:
+    - ./vendor/nunomaduro/larastan/extension.neon
+
+parameters:
+
+    paths:
+        - app
+        - Igrejei
+
+    # The level 8 is the highest level
+    level: 8
+
+    ignoreErrors:
+        - "#Called 'modelKeys' on Laravel collection, but could have been retrieved as a query.#"
+        - '#Access to an undefined property App\\Models\\#'
+        - "#Relation '[a-zA-Z0-9|\\_]+' is not found in [a-zA-Z0-9|\\_]+#"
+        - "#Called 'sum' on Laravel collection+#"
+        - '#Access to an undefined property Illuminate\\Contracts\\Auth\\Authenticatable::\$usuario.#'
+        - "#withTrashed+#"
+
+    excludePaths:
+        - app/Http/Resources/*
+        - */Resources/*
+        - tests/*
+
+    checkMissingIterableValueType: false

@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Church;
 use App\Http\Controllers\Controller;
 use Igrejei\Church\ChurchDelete;
 use Igrejei\Church\Exceptions\ChurchNotDeletedException;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class ChurchDeleteController extends Controller

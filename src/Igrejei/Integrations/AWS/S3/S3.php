@@ -14,8 +14,9 @@ class S3
     {
         $config = config(sprintf('aws.bucket.%s', $bucket));
 
-        if (empty($config))
+        if (empty($config)) {
             throw new InvalidBucketException();
+        }
 
         return new S3Service(
             new S3Client($config['config']),

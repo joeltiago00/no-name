@@ -11,8 +11,7 @@ readonly class PostLike
     public function __construct(
         private PostLikeRepository $postLikeRepository,
         private PostRepository $postRepository
-    )
-    {
+    ) {
     }
 
     /**

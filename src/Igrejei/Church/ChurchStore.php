@@ -4,7 +4,6 @@ namespace Igrejei\Church;
 
 use App\Models\Church;
 use Igrejei\Church\DTO\ChurchDTO;
-use Illuminate\Support\Fluent;
 use Repositories\Church\ChurchRepository;
 
 readonly class ChurchStore

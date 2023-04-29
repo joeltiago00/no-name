@@ -20,8 +20,7 @@ class ChurchDTO extends DTO
         public readonly ?string $zipcode,
         public readonly ?string $complement,
         public readonly ?int $userCreateId
-    )
-    {
+    ) {
     }
 
     public static function makeFromArray(array $data): self

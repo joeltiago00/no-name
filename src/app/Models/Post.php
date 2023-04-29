@@ -10,7 +10,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Post extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory;
+    use SoftDeletes;
 
     protected $table = 'posts';
 
@@ -40,7 +41,8 @@ class Post extends Model
             'deleted_at',
             'id',
             'post_id',
-            'user_id')
+            'user_id'
+        )
             ->where('post_id', $this->getKey());
     }
 }

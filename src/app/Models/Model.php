@@ -12,11 +12,9 @@ abstract class Model extends ModelEloquent
         parent::boot();
 
         self::updating(function (ModelEloquent $model) {
-
         });
 
         self::deleting(function (ModelEloquent $model) {
-
         });
     }
 }

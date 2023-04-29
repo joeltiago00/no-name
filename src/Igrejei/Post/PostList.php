@@ -25,7 +25,6 @@ readonly class PostList
         $posts->each(function (Post $post) {
             $post->usersLiked = $post->usersLiked()->get();
             $post->likesCount = $post->likes()->count();
-
         });
 
         return $posts;

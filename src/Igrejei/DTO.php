@@ -29,8 +29,9 @@ abstract class DTO
         foreach ($properties as $property) {
             $propertyValue = $property->getValue($this);
 
-            if (is_object($propertyValue))
+            if (is_object($propertyValue)) {
                 $propertyValue = $propertyValue->toArray(true);
+            }
 
             $list[camelCaseToSnakeCase($property->name)] = $propertyValue;
         }
@@ -49,11 +50,13 @@ abstract class DTO
         foreach ($properties as $property) {
             $propertyValue = $property->getValue($this);
 
-            if (empty($propertyValue))
+            if (empty($propertyValue)) {
                 continue;
+            }
 
-            if (is_object($propertyValue))
+            if (is_object($propertyValue)) {
                 $propertyValue = $propertyValue->toArray();
+            }
 
             $list[camelCaseToSnakeCase($property->name)] = $propertyValue;
         }

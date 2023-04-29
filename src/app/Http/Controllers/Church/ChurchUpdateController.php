@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Church\ChurchUpdateRequest;
 use Igrejei\Church\ChurchUpdate;
 use Igrejei\Church\Exceptions\ChurchNotUpdatedException;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class ChurchUpdateController extends Controller

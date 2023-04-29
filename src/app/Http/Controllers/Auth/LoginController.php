@@ -7,7 +7,6 @@ use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Resources\Auth\LoginResource;
 use Igrejei\Auth\Exceptions\InvalidCredentialsException;
 use Igrejei\Auth\Login;
-use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {

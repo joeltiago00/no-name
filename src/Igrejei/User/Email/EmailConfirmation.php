@@ -10,9 +10,8 @@ readonly class EmailConfirmation
 {
     public function __construct(
         private EmailConfirmationRepository $emailConfirmationRepository,
-        private UserRepository              $userRepository
-    )
-    {
+        private UserRepository $userRepository
+    ) {
     }
 
     public function handle(string $code): void

@@ -8,7 +8,6 @@ class PostFileDTO extends DTO
 {
     public function __construct(
         public readonly string $link
-    )
-    {
+    ) {
     }
 }

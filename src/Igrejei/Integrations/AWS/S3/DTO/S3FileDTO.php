@@ -5,12 +5,12 @@ namespace Igrejei\Integrations\AWS\S3\DTO;
 class S3FileDTO
 {
     private string $acl = 'public-read';
+    private string $bucket;
 
     public function __construct(
         private readonly string $file,
         private readonly string $fileName
-    )
-    {
+    ) {
     }
 
     public function setBucket(string $bucket): self
