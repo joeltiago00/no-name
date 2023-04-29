@@ -6,4 +6,5 @@ return [
     \Repositories\PostFile\PostFileRepository::class => \Repositories\PostFile\PostFileEloquentRepository::class,
     \Repositories\PostLike\PostLikeRepository::class => \Repositories\PostLike\PostLikeEloquentRepository::class,
     \Repositories\EmailConfirmation\EmailConfirmationRepository::class => \Repositories\EmailConfirmation\EmailConfirmationEloquentRepository::class,
+    \Repositories\Church\ChurchRepository::class => \Repositories\Church\ChurchEloquentRepository::class,
 ];
