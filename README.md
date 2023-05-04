@@ -40,8 +40,11 @@ composer install
 
 ### 🛠 Pre Commit Script
 
+###### ps: Works only out of the container
+
 To make first enable run: 
 ```
+cd src
 cp ./pre-commit.disable ../.git/hooks/pre-commit
 chmod +x .git/hooks/pre-commit
 ```
@@ -53,5 +56,5 @@ mv ../.git/hooks/pre-commit ../.git/hooks/pre-commit-disable
 
 To enable again run:
 ```
-mv .git/hooks/pre-commit-disable .git/hooks/pre-commit
+mv ../.git/hooks/pre-commit-disable ../.git/hooks/pre-commit
 ```
